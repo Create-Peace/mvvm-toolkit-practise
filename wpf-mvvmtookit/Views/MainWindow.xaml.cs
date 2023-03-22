@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,8 +26,13 @@ namespace wpf_mvvmtookit.Views
         {
             InitializeComponent();
             this.DataContext = new MainViewModel();
+            WeakReferenceMessenger.Default.Register<String>(this, OnReceive);
         }
 
-        public MainViewModel DataContext { get; private set; }
+        private void OnReceive(Object recipient, Object message)
+        {
+            MessageBox.Show(message.ToString());
+        }
+
     }
 }

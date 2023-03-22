@@ -21,7 +21,7 @@
                 <TextBox Width="100" Text="{Binding calculateModel.c}"/>
             </StackPanel>
 
-            <Button Content="计算" Height="30" Width="50" HorizontalAlignment="Left" />
+            <Button Content="计算" Height="30" Width="50" HorizontalAlignment="Left" Command="{Binding addCommand}" />
         </StackPanel>
     </Grid>
 </Window>
